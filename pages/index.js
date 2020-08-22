@@ -28,7 +28,9 @@ export default function Home({ postsData }) {
                 <Date dateString={date} />
               </small>
               <br />
-              {snippet}
+              <div className={utilStyles.snippet}>
+                {snippet}
+              </div>
               <br />
             </li>
           ))}
