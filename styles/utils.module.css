@@ -56,8 +56,17 @@
     text-align: center;
   }
 
-
   .snippet {
     font-size: 1.1rem;
     font-style: italic;
+  }
+
+  .inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .inline > * {
+    padding-left: 1rem;
   }
