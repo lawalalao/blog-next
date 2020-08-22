@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getPosts } from '../lib/posts'
+import Date from '../components/date'
 
 export default function Home({ postsData }) {
   return (
@@ -19,11 +20,13 @@ export default function Home({ postsData }) {
         <ul className={utilStyles.list}>
           {postsData.map(({ postID, title, date}) => (
             <li className={utilStyles.listItem} key={postID}>
-              {title}
+              <Link href="/[postID]" as={`/${postID}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {postID}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
