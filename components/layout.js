@@ -2,11 +2,11 @@ import Head from "next/head";
 import Link from "next/link";
 
 const name = "Catalin Pit";
-export const siteTitle = "Catalin's Blog";
+export const siteTitle = "Catalin's Blog"
 
 export default function Layout({ children, home }) {
   return (
-    <div>
+    <div className={"bg-gray-900 text-white"}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="A blog written by Catalin Pit" />
@@ -19,14 +19,16 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
+      <header className={"text-center mb-24 pt-10"}>
         {home ? (
           <>
             <img
               src="/images/profile.jpg"
+              className={"rounded-full h-20 w-20 inline-block align-middle shadow-2xl"}
               alt={name}
             />
-            <h1>{name}</h1>
+            <h1 className={"text-6xl"}>{name}</h1>
+            <h6 className={"tracking-wider italic"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         ) : (
           <>
@@ -46,7 +48,7 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
-      <main>{children}</main>
+      <main className={"container mx-auto max-w-xl pt-200 min-h-screen text-xl"}>{children}</main>
       {!home && (
         <div>
           <Link href="/">
