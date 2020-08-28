@@ -23,7 +23,7 @@ export default function Home({ postsData }) {
                 <small>
                   <Date dateString={date} />
                 </small>
-                <br />
+                <hr className={"mt-2 mb-2"}/>
                 <div>
                   {excerpt}
                 </div>
