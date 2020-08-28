@@ -36,15 +36,17 @@ export default function Layout({ children, home }) {
               <a>
                 <img
                   src="/images/profile.jpg"
+                  className={"rounded-full h-20 w-20 inline-block align-middle shadow-2xl"}
                   alt={name}
                 />
               </a>
             </Link>
             <h2>
               <Link href="/">
-                <a>{name}</a>
+                <a className={"text-6xl"}>{name}</a>
               </Link>
             </h2>
+            <h6 className={"tracking-wider italic"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         )}
       </header>

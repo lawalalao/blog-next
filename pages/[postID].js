@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { getPostsIDs, getPostData } from '../lib/posts'
+import Date from '../components/date'
 
 export default function Post({ postData }) {
     return (
@@ -8,11 +9,16 @@ export default function Post({ postData }) {
             <Head>
                 <title>{postData.title}</title>
             </Head>
-            <h1>{postData.title}</h1>
-            <div>
-                <Date dateString={postData.date} />
+            <div className={"bg-gray-800 p-6"}>
+                <h1 className={"text-4xl font-black"}>{postData.title}</h1>
+                <small>
+                  Posted on <Date dateString={postData.date} />
+                </small>
             </div>
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+            <br/>
+            <div className={"bg-gray-800 p-6"}>
+                <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
+            </div>
         </Layout>
     )
 }
