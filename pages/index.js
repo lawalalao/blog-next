@@ -32,7 +32,7 @@ export default function Home({ postsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Have a look at my articles...</h2>
         <ul className={utilStyles.list}>
-          {postsData.map(({ postID, title, date, snippet }) => (
+          {postsData.map(({ postID, title, date, excerpt }) => (
             <li className={utilStyles.listItem} key={postID}>
               <Link href='/[postID]' as={`/${postID}`}>
                 <a>{title}</a>
@@ -42,8 +42,8 @@ export default function Home({ postsData }) {
                 <Date dateString={date} />
               </small>
               <br />
-              <div className={utilStyles.snippet}>
-                {snippet}
+              <div className={utilStyles.excerpt}>
+                {excerpt}
               </div>
               <br />
             </li>

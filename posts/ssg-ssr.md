@@ -1,7 +1,7 @@
 ---
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-01-02'
-snippet: 'This article explains the different use cases between SSG and SSR'
+excerpt: 'This article explains the different use cases between SSG and SSR'
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
