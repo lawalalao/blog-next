@@ -9,14 +9,14 @@ export default function Post({ postData }) {
             <Head>
                 <title>{postData.title}</title>
             </Head>
-            <div className={"bg-gray-800 p-6"}>
-                <h1 className={"text-4xl font-black"}>{postData.title}</h1>
+            <div className={"p-6 border-2 border-opacity-75 border-purple-500 rounded-lg shadow-2xl"}>
+                <h1 className={"text-xl font-black"}>{postData.title}</h1>
                 <small>
                   Posted on <Date dateString={postData.date} />
                 </small>
             </div>
             <br/>
-            <div className={"bg-gray-800 p-6"}>
+            <div className={"p-6 border-2 border-opacity-75 border-purple-500 rounded-lg shadow-2xl"}>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHTML }} />
             </div>
         </Layout>

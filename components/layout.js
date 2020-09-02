@@ -6,7 +6,7 @@ export const siteTitle = "Catalin's Blog"
 
 export default function Layout({ children, home }) {
   return (
-    <div className={"bg-gray-900 text-white min-h-screen min-w-full"}>
+    <div className={"bg-black text-white min-h-screen min-w-full"}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="A blog written by Catalin Pit" />
@@ -23,16 +23,16 @@ export default function Layout({ children, home }) {
         {home ? (
           <>
             <h1 className={"lg:text-6xl md:text-6xl text-3xl"}>{name}</h1>
-            <h6 className={"tracking-wider italic"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
+            <h6 className={"tracking-wider italic px-4"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         ) : (
           <>
             <h2>
               <Link href="/">
-                <a className={"text-6xl"}>{name}</a>
+                <a className={"lg:text-6xl md:text-6xl text-3xl"}>{name}</a>
               </Link>
             </h2>
-            <h6 className={"tracking-wider italic"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
+            <h6 className={"tracking-wider italic px-4"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         )}
       </header>
@@ -45,9 +45,9 @@ export default function Layout({ children, home }) {
          `
       }>{children}</main>
       {!home && (
-        <div>
+        <div className={"text-center p-8"}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a className={"bg-transparent hover:bg-purple-700 text-purple-500 hover:text-white p-3 rounded-lg"}>← Back to home</a>
           </Link>
         </div>
       )}

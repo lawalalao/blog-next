@@ -15,16 +15,16 @@ export default function Home({ postsData }) {
         <ul>
           {postsData.map(({ postID, title, date, excerpt }) => (
             <li key={postID}>
-              <div className={"bg-gray-800 p-6"}>
+              <div className={"p-6 border-2 border-opacity-75 border-purple-500 rounded-lg shadow-2xl"}>
                 <Link href='/[postID]' as={`/${postID}`}>
-                  <a className={"text-xl font-black"}>{title}</a>
+                  <a className={"text-xl font-black tracking-wide text-purple-400 hover:text-purple-600"}>{title}</a>
                 </Link>
                 <br />
                 <small>
                   <Date dateString={date} />
                 </small>
                 <hr className={"mt-2 mb-2"}/>
-                <div>
+                <div className={"leading-relaxed"}>
                   {excerpt}
                 </div>
               </div>
