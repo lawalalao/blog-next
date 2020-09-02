@@ -6,7 +6,7 @@ export const siteTitle = "Catalin's Blog"
 
 export default function Layout({ children, home }) {
   return (
-    <div className={"bg-gray-900 text-white"}>
+    <div className={"bg-gray-900 text-white min-h-screen min-w-full"}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="A blog written by Catalin Pit" />
@@ -22,25 +22,11 @@ export default function Layout({ children, home }) {
       <header className={"text-center mb-24 pt-10"}>
         {home ? (
           <>
-            <img
-              src="/images/profile.jpg"
-              className={"rounded-full h-20 w-20 inline-block align-middle shadow-2xl"}
-              alt={name}
-            />
-            <h1 className={"text-6xl"}>{name}</h1>
+            <h1 className={"lg:text-6xl md:text-6xl text-3xl"}>{name}</h1>
             <h6 className={"tracking-wider italic"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         ) : (
           <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={"rounded-full h-20 w-20 inline-block align-middle shadow-2xl"}
-                  alt={name}
-                />
-              </a>
-            </Link>
             <h2>
               <Link href="/">
                 <a className={"text-6xl"}>{name}</a>
@@ -50,7 +36,14 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
-      <main className={"container mx-auto max-w-xl pt-200 min-h-screen text-xl"}>{children}</main>
+      <main className={
+        `
+          container 
+          mx-auto
+          lg:w-1/2
+          px-6
+         `
+      }>{children}</main>
       {!home && (
         <div>
           <Link href="/">
