@@ -1,12 +1,12 @@
-import Head from "next/head";
-import Link from "next/link";
+import Head from "next/head"
+import Link from "next/link"
 
 const name = "Catalin Pit";
 export const siteTitle = "Catalin's Blog"
 
 export default function Layout({ children, home }) {
   return (
-    <div className={"bg-black text-white min-h-screen min-w-full"}>
+    <div className={"flex flex-col min-h-screen bg-lighter-black"}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="A blog written by Catalin Pit" />
@@ -19,20 +19,20 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={"text-center mb-24 pt-10"}>
+      <header className={"text-center mb-12 p-12 bg-footer-color shadow-inner"}>
         {home ? (
           <>
-            <h1 className={"lg:text-6xl md:text-6xl text-3xl"}>{name}</h1>
-            <h6 className={"tracking-wider italic px-4"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
+            <h1 className={"lg:text-6xl md:text-6xl text-3xl text-white font-extrabold"}>{name}</h1>
+            <h6 className={"tracking-wider italic px-4 text-paragraph"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         ) : (
           <>
             <h2>
               <Link href="/">
-                <a className={"lg:text-6xl md:text-6xl text-3xl"}>{name}</a>
+                <a className={"lg:text-6xl md:text-6xl text-3xl text-white font-extrabold"}>{name}</a>
               </Link>
             </h2>
-            <h6 className={"tracking-wider italic px-4"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
+            <h6 className={"tracking-wider italic px-4 text-paragraph"}>'It is your attitude, more than your aptitude, that will determine your altitude'</h6>
           </>
         )}
       </header>
@@ -42,6 +42,7 @@ export default function Layout({ children, home }) {
           mx-auto
           lg:w-1/2
           px-6
+          mb-auto
          `
       }>{children}</main>
       {!home && (
@@ -51,6 +52,9 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      <section className={"shadow-inner text-center text-white"}>
+        <div className={"bg-footer-color p-12"}>Built and designed by Catalin Pit</div>
+      </section>
     </div>
   );
 }
